@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validation</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	 
+</head>
+<body>
+
+<h1 align="center">Validation Page<h1>
+
+	Aadhar Number: <input type="text" name="aadhar_no" id="aadhar_no">
+	<button id="show">Validate</button>
+	<p id="hide">Enter OTP: <input type="text" name="OTP" id="otp"><p> 
+	<button onclick="getValue()">Submit</button>  
+
+	 <p id="test"></p>
+	 <p id="test2"></p>
+
+<script>
+	function getValue() {
+		var x =document.getElementById("aadhar_no").value;
+		var y =document.getElementById("otp").value;
+		var z =document.getElementById("test");
+		var z1 =document.getElementById("test2");
+
+		z.innerHTML=x;
+		z1.innerHTML=y;
+
+		
+	}
+
+</script>
+
+
+
+
+</body>
+</html>

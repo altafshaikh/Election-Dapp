@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+	<title>E-VOTE</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- //for-mobile-apps -->
+	 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="//fonts.googleapis.com/css?family=Oswald:400,500,600,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<!-- header -->
+	<div>	
+
+	<section class="w3layouts-header py-2">
+		<div class="container">
+			  <!-- header -->
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary">
+                    <h1>
+                        <a class="navbar-brand" href="index.html">
+                          E-VOTE
+                        </a>
+                    </h1>
+                    <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-lg-auto text-center">
+                            <li class="nav-item active  mr-3">
+                                <a class="nav-link" href="index.html">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item  mr-3">
+                                <a class="nav-link" href="about.html">Guidelines</a>
+                            </li>
+							 <li class="nav-item  mr-3">
+                                <a class="nav-link" href="contact.html">contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        </header>
+		</div>
+	</section>
+
+
+<div align="center" style="height: 500px;width: 1400px">
+<br><br>	
+
+<div align="center" style="height: 400px;width: 400px;border: 10px 10px 10px 10px;border-style: solid;border-color: black;position: relative;">
+	<h1>Validation</h1><br>
+
+
+<input type="text" name="aadhar_no" id="aadhar_no" placeholder="Enter Aadhar Number">&nbsp;
+<button onclick="validate_me()">Generate OTP</button><br><br>
+<input type="text" name="otp" id="otp" placeholder="Enter OTP"><br><br>
+<form accept-charset="UTF-8">
+<input formaction="vote.html" type="submit" name="" onclick="verify()" value="Submit"><br><br><br>
+</form>
+
+</div>
+
+
+</div>
+
+	<footer class="footer-section py-5">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-4 footer-grids">
+					<h3>Get in touch</h3>
+					<p>Shop No.10, Om Sai Aradhana Building, Hanuman Tekri, Ashokvan, Shiv Vallabh Road,</p>
+					<p class="my-2"> Dahisar East, Mumbai, Maharashtra, 400068</p>
+					<p class="phone">phone: 098193 99295</p>
+					<p class="phone my-2">Fax: +91986364785</p>
+					<p class="phone">Mail:
+						<a href="mailto:govvote@gmail.com">govvote@gmail.com</a>
+					</p>
+				</div>
+				<div class="col-lg-4 footer-grids">
+					<h2>Latest News</h2>
+					<div class="d-flex justify-content-around">
+						<a href="#" class="col-4">
+							<img src="images/g1.jpg" class="img-fluid" alt="Responsive image">
+						</a> <span></span>
+						<a href="#" class="col-4">
+							<img src="images/g2.jpg" class="img-fluid" alt="Responsive image">
+						</a><span></span>
+						<a href="#" class="col-4">
+							<img src="images/g3.jpg" class="img-fluid" alt="Responsive image">
+						</a>
+					</div>
+					<div class="d-flex justify-content-around"></div>
+				</div>
+				<div class="col-lg-4 footer-grids">
+					<h3>Twitter feed</h3>
+					<ul class="w3agile_footer_grid_list">
+						<li>India needs your vote to develop a peaceful nation
+							<a href</a>as well as prosperous nation.
+							<span>
+								<i class="fab fa-twitter"></i> 02 days ago</span>
+						</li>
+						<li> Give your SINGLE minute to
+							<a href="#"></a>give a SINGLE votes.
+							<span>
+								<i class="fab fa-twitter"></i> 03 days ago</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //Footer -->
+<!-- copyright -->
+	<section class="copyright-w3layouts py-xl-4 py-3">
+		<div class="container">
+			<p> All Rights Reserved | Design by Team TECHNERDS
+			</p>
+			<ul class="social-nav footer-social social two text-center mt-2">
+					<li>
+						<a href="#">
+							<i class="fab fa-facebook-f" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-twitter" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-instagram" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+		</div>
+	</section>
+	<!-- //copyright -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="agileits-w3layouts-info">
+						<img src="images/bg1.jpg" class="img-fluid" alt="" />
+						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. </p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+  var response = "";
+  var send_otp="";
+  var enter_otp="";
+  var flag=false;
+  $(document).ready(function(){
+
+    var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+      response=this.responseText.split("\n");
+      console.log(response);
+
+    }
+
+  };
+  xhttp.open("GET", "aadhar.txt", true);
+  xhttp.send();
+});
+
+  function validate_me(){
+  	//console.log(response);
+  	 var aadhar_no=document.getElementById("aadhar_no").value;
+  	 enter_otp=document.getElementById("otp").value;
+  	 console.log("hey i am  entered otp");
+  	 console.log(enter_otp);
+    var j=2;
+ 	for (var i = 0; i < response.length; i=i+3) {
+	 	if(aadhar_no+"\r"==response[i])
+	 	{
+	 		//console.log(response[j]);
+	 		var number=response[j]
+
+	 		send_OTP(number);
+
+
+	 		//alert("Hey Dosa,Good Morning");
+	 	}
+	 	// console.log(this.responseText.split("\n")[i]);
+	 	// console.log(this.responseText.split("\n")[j]);
+	 	j=j+3;   
+    //console.log(this.responseText.split("\n")[0]);
+    //console.log(this.responseText.split("\n")[2]);
+    	
+    }
+  }
+
+  function send_OTP(number){
+
+  	var send_otp=Math.floor((Math.random() * 9999) + 1000);
+  	console.log("hey i am in send otp function");
+  	console.log(send_otp);
+//   	var settings = {
+//   "async": true,
+//   "crossDomain": true,
+//   "url": "https://www.fast2sms.com/dev/bulk?authorization=Xn4BP6YkCtab0iTuSgH8WEzJONveKUpIhwARlDx3MZroqFcmVQcD8kBNCzfen2FPpIlsHtZKmJ47X9gi&sender_id=FSTSMS&message=Your OTP is "+send_otp"+&language=english&route=p&numbers=+"number,
+//   "method": "GET"
+// }
+
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+  }
+
+  function verify() {
+console.log(enter_otp);
+  		console.log(send_otp);
+//console.log(typeof(enter_otp));
+
+//console.log(typeof(send_otp));
+
+  	if(parseInt(enter_otp)==parseInt(send_otp)){
+  		
+  		alert("Otp is verified Sucessfully");
+  		flag=true;
+  		
+  	}
+  	else{
+
+  		alert("Wrong OTP");
+  		
+  	}
+  	
+  }
+
+</script>
+
+
+</body>
+
+</html>

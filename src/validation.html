@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1>Validation</h1>
+
+
+<input type="text" name="aadhar_no" id="aadhar_no" placeholder="Enter Aadhar Number">&nbsp;
+<button onclick="validate_me()">Generate OTP</button><br>
+<input type="text" name="otp" id="otp" placeholder="Enter OTP"><br>
+<form accept-charset="UTF-8">
+<input formaction="vote.html" type="submit" name="" onclick="verify()" value="Submit">
+</form>
+
+<div id="demo">
+</div>
+
+<script>
+  var response = "";
+  var send_otp="";
+  var enter_otp="";
+  var flag=false;
+  $(document).ready(function(){
+
+    var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+      response=this.responseText.split("\n");
+
+      $('#demo').hide();
+
+    }
+
+  };
+  xhttp.open("GET", "aadhar.txt", true);
+  xhttp.send();
+});
+
+  function validate_me(){
+  	//console.log(response);
+  	 var aadhar_no=document.getElementById("aadhar_no").value;
+  	 enter_otp=document.getElementById("otp").value;
+  	 console.log("hey i am  entered otp");
+  	 console.log(enter_otp);
+    var j=2;
+ 	for (var i = 0; i < response.length; i=i+3) {
+	 	if(aadhar_no+"\r"==response[i])
+	 	{
+	 		//console.log(response[j]);
+	 		var number=response[j]
+
+	 		send_OTP(number);
+      console.log(enter_otp);
+
+      console.log(send_otp);
+
+
+	 		//alert("Hey Dosa,Good Morning");
+	 	}
+	 	// console.log(this.responseText.split("\n")[i]);
+	 	// console.log(this.responseText.split("\n")[j]);
+	 	j=j+3;   
+    //console.log(this.responseText.split("\n")[0]);
+    //console.log(this.responseText.split("\n")[2]);
+    	
+    }
+  }
+
+  function send_OTP(number){
+
+  	send_otp=Math.floor((Math.random() * 9999) + 1000);
+  	console.log("hey i am in send otp function");
+  	console.log(send_otp);
+
+  	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://www.fast2sms.com/dev/bulk?authorization=Xn4BP6YkCtab0iTuSgH8WEzJONveKUpIhwARlDx3MZroqFcmVQcD8kBNCzfen2FPpIlsHtZKmJ47X9gi&sender_id=FSTSMS&message=Your otp is "+send_otp+"+&language=english&route=p&numbers="+number,
+  "method": "GET"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+  }
+
+  function verify() {
+    enter_otp=document.getElementById("otp").value;
+
+console.log("Enter otp"+enter_otp);
+
+console.log("Send Otp"+send_otp);
+
+  	if(parseInt(enter_otp)==parseInt(send_otp)){
+
+  		alert("Otp is verified Sucessfully");
+  		flag=true;
+  		return 1;
+  	}
+  	else{
+
+  		alert("Wrong OTP");
+  		return 0;
+
+
+  	}
+  	
+  }
+</script>
+
+
+</body>
+</html>
